@@ -101,6 +101,11 @@ nav a:hover {
     justify-content: center;
     overflow: hidden;
     width: 46px;
+    transition: transform 1.5s ease;
+}
+.avatar:hover {
+    transform: scale(1.9) translateY(10px);
+    cursor: pointer;
 }
 
 .avatar img {
@@ -110,6 +115,7 @@ nav a:hover {
     object-fit: cover;
     object-position: center top;
 }
+
 
 .hero,
 .section,
@@ -292,8 +298,8 @@ h1 span {
 }
 .section-content {
     display: grid;
-    gap: 50px;
-    grid-template-columns: 1.35fr 1fr;
+    gap: clamp(45px, 7vw, 100px);
+    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.45fr);
     margin-top: 60px;
 }
 h2 {
@@ -307,6 +313,16 @@ h2 {
     line-height: 1.8;
     margin-bottom: 18px;
     max-width: 440px;
+}
+.about-title {
+    font-size: clamp(2.15rem, 3.7vw, 3.8rem);
+    max-width: 360px;
+}
+.about .section-content > div {
+    max-width: 780px;
+}
+.about .section-content p {
+    max-width: none;
 }
 .about-title em {
     background: linear-gradient(90deg, var(--cyan), var(--pink));
@@ -432,12 +448,21 @@ h2 {
     margin: 0;
 }
 .project-note {
+    color: var(--muted);
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    margin-top: 13px;
+    max-width: 780px;
+}
+.project-link-note {
     color: var(--cyan);
     display: block;
     font-family: "DM Mono", monospace;
-    font-size: 0.64rem;
-    letter-spacing: 0.02em;
-    margin-top: 14px;
+    font-size: 0.65rem;
+    letter-spacing: 0.03em;
+    margin-top: 10px;
 }
 .project-featured {
     background: linear-gradient(90deg, rgba(140, 108, 255, 0.11), rgba(40, 226, 255, 0.05));
@@ -456,9 +481,16 @@ h2 {
 .contact .section-label {
     color: var(--cyan);
 }
+.contact-intro {
+    color: var(--muted);
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    line-height: 1.75;
+    margin: 0 0 28px;
+    max-width: 650px;
+}
 .contact h2 {
     display: block;
-    margin: 75px 0 32px;
+    margin: 68px 0 22px;
     max-width: 760px;
     padding-right: 32px;
 }
@@ -498,6 +530,11 @@ h2 {
     letter-spacing: 0.02em;
     padding: 12px 18px;
     transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.social-icon {
+    height: 18px;
+    margin-right: 9px;
+    width: 18px;
 }
 .social-links a:hover {
     background: var(--cyan);
